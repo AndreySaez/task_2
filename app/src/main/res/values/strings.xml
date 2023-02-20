@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">task_2</string>
+    <string name="app_name">Colors</string>
+    <string name="hello_world">Hello world</string>
+    <string name = "item_number">Item </string>
 </resources>
