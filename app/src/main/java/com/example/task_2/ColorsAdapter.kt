@@ -30,10 +30,7 @@ class ColorsAdapter : RecyclerView.Adapter<ColorsHolder>() {
 
     }
 
-    override fun getItemCount(): Int {
-        return 51
-
-    }
+    override fun getItemCount() = 51
 
     override fun onBindViewHolder(holder: ColorsHolder, position: Int) {
         val title = holder.itemTitle.context.getString(R.string.item_string, position)
