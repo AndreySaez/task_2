@@ -1,16 +1,11 @@
 package com.example.task_2
 
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.LayerDrawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
-import androidx.core.graphics.green
-import androidx.core.graphics.toColorLong
 import androidx.recyclerview.widget.RecyclerView
+
 
 class ColorsAdapter : RecyclerView.Adapter<ColorsHolder>() {
 
@@ -28,20 +23,21 @@ class ColorsAdapter : RecyclerView.Adapter<ColorsHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorsHolder {
-        val colorView = LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false)
+        val colorView =
+            LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false)
         return ColorsHolder(colorView)
 
 
     }
 
     override fun getItemCount(): Int {
-        return 50
+        return 51
 
     }
 
     override fun onBindViewHolder(holder: ColorsHolder, position: Int) {
-        val string = holder.itemTitle.context.getString(R.string.item_number)
-        holder.itemTitle.text = "$string $position"
+        val title = holder.itemTitle.context.getString(R.string.item_string, position)
+        holder.itemTitle.text = title
         holder.itemCircle.drawable.colorFilter =
             BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
                 holder.itemCircle.context.getColor(colors[position % colors.size]),
